@@ -2,25 +2,46 @@ import java.util.Scanner;
 
 public class BaiThucHanh {
     public static void main(String[] args) {
-        int a,b;
+        int choice = 1;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter a: ");
-        a = sc.nextInt();
-        System.out.println("Enter b: ");
-        b = sc.nextInt();
+        while (choice != 0) {
+            System.out.println("Menu");
+            System.out.println("1. Draw the triangle");
+            System.out.println("2. Draw the square");
+            System.out.println("3. Draw the rectangle");
+            System.out.println("0. Exit");
+            choice = sc.nextInt();
 
-        a = Math.abs(a);
-        b = Math.abs(b);
-
-        if (a == 0 || b == 0)
-            System.out.println("No greatest common factor");
-
-        while (a != b){
-            if (a > b)
-                a = a - b;
-            else
-                b = b - a;
+            switch (choice) {
+                case 1:
+                    System.out.println("Draw the triangle");
+                    System.out.println("******");
+                    System.out.println("*****");
+                    System.out.println("****");
+                    System.out.println("***");
+                    System.out.println("**");
+                    System.out.println("*");
+                    break;
+                case 2:
+                    System.out.println("Draw the square");
+                    System.out.println("* * * * * *");
+                    System.out.println("* * * * * *");
+                    System.out.println("* * * * * *");
+                    System.out.println("* * * * * *");
+                    System.out.println("* * * * * *");
+                    System.out.println("* * * * * *");
+                    break;
+                case 3:
+                    System.out.println("Draw the rectangle");
+                    System.out.println("* * * * * *");
+                    System.out.println("* * * * * *");
+                    System.out.println("* * * * * *");
+                    break;
+                case 0:
+                    System.exit(0);
+                default:
+                    System.out.println("No choice");
+            }
         }
-        System.out.println("Greatesy common factor: " + a);
     }
 }
