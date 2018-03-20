@@ -2,46 +2,24 @@ import java.util.Scanner;
 
 public class BaiThucHanh {
     public static void main(String[] args) {
-        int choice = 1;
         Scanner sc = new Scanner(System.in);
-        while (choice != 0) {
-            System.out.println("Menu");
-            System.out.println("1. Draw the triangle");
-            System.out.println("2. Draw the square");
-            System.out.println("3. Draw the rectangle");
-            System.out.println("0. Exit");
-            choice = sc.nextInt();
-
-            switch (choice) {
-                case 1:
-                    System.out.println("Draw the triangle");
-                    System.out.println("******");
-                    System.out.println("*****");
-                    System.out.println("****");
-                    System.out.println("***");
-                    System.out.println("**");
-                    System.out.println("*");
+        int count = 0;
+        for (int number = 2; count < 20 ; number++) {
+            int i = 2;
+            boolean check = true;
+            while (i <= Math.sqrt(number)) {
+                if (number % i == 0) {
+                    check = false;
                     break;
-                case 2:
-                    System.out.println("Draw the square");
-                    System.out.println("* * * * * *");
-                    System.out.println("* * * * * *");
-                    System.out.println("* * * * * *");
-                    System.out.println("* * * * * *");
-                    System.out.println("* * * * * *");
-                    System.out.println("* * * * * *");
-                    break;
-                case 3:
-                    System.out.println("Draw the rectangle");
-                    System.out.println("* * * * * *");
-                    System.out.println("* * * * * *");
-                    System.out.println("* * * * * *");
-                    break;
-                case 0:
-                    System.exit(0);
-                default:
-                    System.out.println("No choice");
+                }
+                i++;
+            }
+            if (check) {
+                System.out.println("20 so nguyen to dau tien: "+ number + " ");
+                count++;
             }
         }
     }
+
 }
+
